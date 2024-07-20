@@ -65,8 +65,8 @@ class MomoPaymentController extends Controller
         $orderInfo = "Thanh toán qua MoMo";
         $amount = "10000";  
         $orderId = time() . "";
-        $redirectUrl = "http://192.168.30.244:8000/api/momo-ipn"; 
-        $ipnUrl = "http://192.168.30.244:8000/api/momo-ipn"; 
+        $redirectUrl = "http://192.168.11.239:8000/api/momo-ipn"; 
+        $ipnUrl = "http://192.168.11.239:8000/api/momo-ipn"; 
         $extraData = "";
 
         $requestId = time() . "";
@@ -143,7 +143,7 @@ class MomoPaymentController extends Controller
                 'payType' => $payType,
                 'signature' => $signature,
             ]);
-            return redirect('http://192.168.30.244:8000/api/thank-you');
+            return redirect('http://192.168.11.239:8000/api/thank-you');
         } else {
             // return response()->json([
             //     'error' => 'Invalid signature or resultCode',
@@ -159,7 +159,7 @@ class MomoPaymentController extends Controller
                 'payType' => $payType,
                 'signature' => $signature,
             ]);
-            return redirect('http://192.168.30.244:8000/api/erro-payment');
+            return redirect('http://192.168.11.239:8000/api/erro-payment');
         }
     }
 }
